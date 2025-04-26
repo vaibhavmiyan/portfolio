@@ -1,0 +1,160 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #212529;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: #1a1a1a;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0dcaf0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-size: 1rem;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0%;
+  bottom: -5px;
+  left: 0;
+  background-color: #0dcaf0;
+  transition: width 0.3s;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Sections */
+.section {
+  padding: 20px 0 10px; /* smaller gap */
+  scroll-margin-top: 80px;
+}
+
+/* Only the first section needs top space to avoid header overlap */
+.section:first-of-type {
+  padding-top: 120px;
+}
+
+/* Section Heading */
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #0d6efd;
+  text-align: center;
+}
+
+/* Content Box */
+.content-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+}
+
+/* Skills and Certificates Lists */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  background: #0d6efd;
+  color: white;
+  padding: 0.6rem;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.cert-list {
+  padding-left: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #1a1a1a;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
